@@ -262,7 +262,7 @@ section>h2{margin-bottom:0!important}
 
 <section aria-labelledby="h-cam">
   <h2 id="h-cam" style="margin-bottom:6px">Webcams</h2>
-  <p class="sub" id="camstatus">Capturas automáticas a las 6, 12 y 18 h</p>
+  <p class="sub" id="camstatus">Capturas automáticas a las 8:30, 12:00 y 15:30</p>
   <div class="camtabs" id="camtabs" role="tablist"></div>
   <div class="cams" id="cams"></div>
   <p style="font-size:11px;color:var(--muted);margin-top:6px">Webcams oficiales de OK Bergbahnen (ok-bergbahnen.com/webcams) · imágenes de tramino, foto-webcam.eu, panomax y feratel · toca «En directo» para ver la cámara original</p>
@@ -309,7 +309,7 @@ section>h2{margin-bottom:0!important}
     <li>Aperturas 26/27: ok-bergbahnen.com/oeffnungszeiten (Fellhorn/Kanzelwand y Gaisbühl 4 dic, Ifen y Parsenn 11 dic, Nebelhorn 12 dic, Heubergbahn 18 dic, Walmendingerhorn 24 dic; Söllereck según nieve; cierre 4 abr, Nebelhorn 2 may).</li>
     <li>Aperturas anteriores: notas de prensa de OK Bergbahnen (2022, 2024, 2025), schneehoehen.de, skiinfo.de y alpinforum.com. Las fechas marcadas con ~ son aproximadas o planificadas; donde no hay cierre documentado la barra se desvanece.</li>
     <li>Nieve: Open-Meteo. El histórico usa el reanálisis ERA5 (celda de ~10 km), así que la altura de nieve es orientativa y no equivale a la de las pistas, que además llevan nieve artificial. El pronóstico (16 días) y la previsión estacional (ECMWF SEAS5) se actualizan cada 6 horas.</li>
-    <li>Webcams: un proceso automático (GitHub Actions) guarda una imagen de cada cámara a las 6, 12 y 18 h (hora de Alemania).</li>
+    <li>Webcams: un proceso automático (GitHub Actions) guarda una imagen de cada cámara a las 8:30, 12:00 y 15:30 (hora de Alemania).</li>
   </ul>
 </details>
 </div>
@@ -1877,13 +1877,13 @@ const dlab=t=>{const d=new Date(t),n=new Date();const k=x=>x.toLocaleDateString(
 async function loadCams(){
   try{CAMLIST=await (await fetch("cams.json",{cache:"no-cache"})).json()}catch(e){}
   try{CAMIDX=await (await fetch("cams/index.json",{cache:"no-cache"})).json()}catch(e){}
-  if(CAMIDX&&CAMIDX.updated)$("#camstatus").textContent=`Capturas automáticas a las 6, 12 y 18 h · última ${ago(CAMIDX.updated)}`;
+  if(CAMIDX&&CAMIDX.updated)$("#camstatus").textContent=`Capturas automáticas a las 8:30, 12:00 y 15:30 · última ${ago(CAMIDX.updated)}`;
   renderCams();
 }
 function renderCams(){
   $("#camtabs").innerHTML=CAMZ.map(k=>`<button role="tab" data-cz="${k}" aria-selected="${k===camZone}"><i style="background:${ZGROUP[k][1]}"></i>${ZGROUP[k][0]}<span style="opacity:.6;font:500 11px/1 var(--f-mono)">${CAMLIST.filter(c=>c.zone===k).length}</span></button>`).join("");
   $("#cams").innerHTML=CAMLIST.filter(c=>c.zone===camZone).map(c=>{
-    const e=CAMIDX&&CAMIDX.cams[c.id],slots=e?["06","12","18"].filter(s=>e.slots[s]).sort((a,b)=>e.slots[a].t<e.slots[b].t?-1:1):[];
+    const e=CAMIDX&&CAMIDX.cams[c.id],slots=e?["08","12","15"].filter(s=>e.slots[s]).sort((a,b)=>e.slots[a].t<e.slots[b].t?-1:1):[];
     const cur=CAMSLOT[c.id]&&e&&e.slots[CAMSLOT[c.id]]?CAMSLOT[c.id]:e&&e.latest;
     const s=e&&e.slots[cur],wide=s&&s.w/s.h>2.6;
     const img=s?`cams/${c.id}/${cur}.jpg?v=${Date.parse(s.t)}`:c.kind==="img"?c.src:null;

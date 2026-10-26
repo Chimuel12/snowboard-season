@@ -1,9 +1,11 @@
 name: Webcams y pronóstico
 
-# 05, 11 and 17 UTC = 06, 12 and 18 h in Germany in winter (07, 13, 19 h in summer)
+# 07:30, 11:00 and 14:30 UTC = 08:30, 12:00 and 15:30 in Germany in winter (one hour later in summer time)
 on:
   schedule:
-    - cron: "0 5,11,17 * * *"
+    - cron: "30 7 * * *"
+    - cron: "0 11 * * *"
+    - cron: "30 14 * * *"
   push:
     branches: [main]
   workflow_dispatch:

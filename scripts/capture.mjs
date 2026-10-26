@@ -1,4 +1,4 @@
-// Captures a still of every webcam in cams.json into cams/<id>/<slot>.jpg (slot = 06, 12 or 18, Europe/Berlin)
+// Captures a still of every webcam in cams.json into cams/<id>/<slot>.jpg (slot = 08, 12 or 15 for 08:30, 12:00, 15:30 Europe/Berlin)
 // and updates cams/index.json. Panomax and feratel players are opened in headless Chromium and the
 // still image they load is saved; if none is found, a screenshot of the player is used instead.
 import { chromium } from 'playwright';
@@ -16,10 +16,13 @@ function berlinHour(d = new Date()) {
   return Number(new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Berlin', hour: '2-digit', hourCycle: 'h23' }).format(d));
 }
 const h = berlinHour();
-const slot = process.env.SLOT || (h < 9 ? '06' : h < 15 ? '12' : '18');
+const SLOTS = ['08', '12', '15'];
+const slot = process.env.SLOT || (h < 10 ? '08' : h < 14 ? '12' : '15');
 
 let index = { cams: {} };
 try { index = JSON.parse(await fs.readFile(path.join(OUT, 'index.json'), 'utf8')); } catch {}
+// drop slots from older schedules
+for (const e of Object.values(index.cams)) for (const s of Object.keys(e.slots)) if (!SLOTS.includes(s)) delete e.slots[s];
 
 async function save(cam, buf) {
   const img = sharp(buf);
