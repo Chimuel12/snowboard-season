@@ -1,14 +1,14 @@
 {
-  "name": "Snowboard & Ski Season 26/27",
-  "short_name": "Snow 26/27",
+  "name": "SnowSmarter",
+  "short_name": "SnowSmarter",
   "description": "Pistas en 3D, webcams, pronóstico de nieve y aperturas en Oberstdorf y Kleinwalsertal.",
   "lang": "es",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#14212B",
-  "theme_color": "#14212B",
+  "background_color": "#000000",
+  "theme_color": "#000000",
   "icons": [
     {"src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
     {"src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},

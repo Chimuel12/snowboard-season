@@ -60,7 +60,7 @@ jobs:
       - name: Assemble site
         run: |
           mkdir _site
-          cp index.html manifest.webmanifest sw.js cams.json .nojekyll *.png _site/
+          cp index.html manifest.webmanifest sw.js cams.json .nojekyll *.png logo.svg walkthrough.mp4 _site/
           cp -r data cams _site/
 
       # GitHub pauses scheduled workflows after 60 days without commits; re-enabling resets that timer
