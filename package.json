@@ -1,0 +1,13 @@
+{
+  "name": "snowboard-season",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "capture": "node scripts/capture.mjs",
+    "weather": "node scripts/weather.mjs"
+  },
+  "dependencies": {
+    "playwright": "1.64.1",
+    "sharp": "0.35.5"
+  }
+}

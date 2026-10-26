@@ -1,0 +1,74 @@
+name: Webcams y pronóstico
+
+# 05, 11 and 17 UTC = 06, 12 and 18 h in Germany in winter (07, 13, 19 h in summer)
+on:
+  schedule:
+    - cron: "0 5,11,17 * * *"
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      # the last captures live in the Actions cache, not in git, so the repo does not grow
+      - name: Restore previous captures
+        uses: actions/cache/restore@v4
+        with:
+          path: cams
+          key: cams-${{ github.run_id }}
+          restore-keys: cams-
+
+      - name: Capture webcams
+        if: github.event_name != 'push' || hashFiles('cams/index.json') == ''
+        run: |
+          npx playwright install --with-deps --only-shell chromium
+          node scripts/capture.mjs
+
+      - name: Snow forecast
+        run: node scripts/weather.mjs
+
+      - name: Save captures
+        uses: actions/cache/save@v4
+        with:
+          path: cams
+          key: cams-${{ github.run_id }}
+
+      - name: Assemble site
+        run: |
+          mkdir _site
+          cp index.html manifest.webmanifest sw.js cams.json .nojekyll *.png _site/
+          cp -r data cams _site/
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,178 @@
+[
+ {
+  "id": "neb-pano",
+  "zone": "neb",
+  "name": "Panorama 360° · Nebelhornbahn",
+  "src": "https://ok-bergbahnen.panomax.com/nebelhorn",
+  "kind": "pano",
+  "link": "https://ok-bergbahnen.panomax.com/nebelhorn"
+ },
+ {
+  "id": "neb-live",
+  "zone": "neb",
+  "name": "Livecam Nebelhorn",
+  "src": "https://webtv.feratel.com/webtv/?design=v5&cam=3052&c1=0&c2=0&lg=de",
+  "kind": "live",
+  "link": "https://webtv.feratel.com/webtv/?design=v5&cam=3052&c1=0&c2=0&lg=de"
+ },
+ {
+  "id": "neb-berg",
+  "zone": "neb",
+  "name": "Nebelhorn · estación superior",
+  "src": "https://webcams.tramino.net/das-hoechste/nebelhorn-berg.jpg",
+  "kind": "img",
+  "link": "https://webcams.tramino.net/das-hoechste/nebelhorn-berg.jpg"
+ },
+ {
+  "id": "neb-seealpe",
+  "zone": "neb",
+  "name": "Nebelhorn · Seealpe",
+  "src": "https://webcams.tramino.net/das-hoechste/nebelhorn-seealpe.jpg",
+  "kind": "img",
+  "link": "https://webcams.tramino.net/das-hoechste/nebelhorn-seealpe.jpg"
+ },
+ {
+  "id": "neb-gipfel",
+  "zone": "neb",
+  "name": "Nebelhorn · cima",
+  "src": "https://www.foto-webcam.eu/webcam/nebelhorn/current/1200.jpg",
+  "kind": "img",
+  "link": "https://www.foto-webcam.eu/webcam/nebelhorn/"
+ },
+ {
+  "id": "fel-live",
+  "zone": "fel",
+  "name": "Livecam Fellhorn",
+  "src": "https://webtv.feratel.com/webtv/?design=v5&cam=3002&c1=0&c2=0&lg=de",
+  "kind": "live",
+  "link": "https://webtv.feratel.com/webtv/?design=v5&cam=3002&c1=0&c2=0&lg=de"
+ },
+ {
+  "id": "fel-moeser",
+  "zone": "fel",
+  "name": "Livecam Möserbahn",
+  "src": "https://webtv.feratel.com/webtv/?design=v5&cam=3057&c1=0&c2=0&lg=de",
+  "kind": "live",
+  "link": "https://webtv.feratel.com/webtv/?design=v5&cam=3057&c1=0&c2=0&lg=de"
+ },
+ {
+  "id": "fel-mittel",
+  "zone": "fel",
+  "name": "Fellhorn · estación intermedia",
+  "src": "https://webcams.tramino.net/das-hoechste/fellhorn-mittelstation.jpg",
+  "kind": "img",
+  "link": "https://webcams.tramino.net/das-hoechste/fellhorn-mittelstation.jpg"
+ },
+ {
+  "id": "fel-gipfel",
+  "zone": "fel",
+  "name": "Fellhorn · estación de la cima",
+  "src": "https://webcams.tramino.net/das-hoechste/fellhorn-gipfelstation.jpg",
+  "kind": "img",
+  "link": "https://webcams.tramino.net/das-hoechste/fellhorn-gipfelstation.jpg"
+ },
+ {
+  "id": "fel-fw",
+  "zone": "fel",
+  "name": "Fellhornbahn · cima",
+  "src": "https://www.foto-webcam.eu/webcam/fellhorn/current/1200.jpg",
+  "kind": "img",
+  "link": "https://www.foto-webcam.eu/webcam/fellhorn/"
+ },
+ {
+  "id": "kan-live",
+  "zone": "fel",
+  "name": "Livecam Kanzelwand",
+  "src": "https://webtv.feratel.com/webtv/?design=v5&cam=3056&c1=0&c2=0&lg=de",
+  "kind": "live",
+  "link": "https://webtv.feratel.com/webtv/?design=v5&cam=3056&c1=0&c2=0&lg=de"
+ },
+ {
+  "id": "kan-pano",
+  "zone": "fel",
+  "name": "Panorama 360° · Kanzelwand",
+  "src": "https://ok-bergbahnen.panomax.com/kanzelwand",
+  "kind": "pano",
+  "link": "https://ok-bergbahnen.panomax.com/kanzelwand"
+ },
+ {
+  "id": "sol-pano",
+  "zone": "sol",
+  "name": "Panorama 360° · Söllereck",
+  "src": "https://soellereck.panomax.com/",
+  "kind": "pano",
+  "link": "https://soellereck.panomax.com/"
+ },
+ {
+  "id": "sol-mittel",
+  "zone": "sol",
+  "name": "Panorama 360° · Söllereck intermedia",
+  "src": "https://ok-bergbahnen.panomax.com/soellereck-mittelstation",
+  "kind": "pano",
+  "link": "https://ok-bergbahnen.panomax.com/soellereck-mittelstation"
+ },
+ {
+  "id": "sol-ochs",
+  "zone": "sol",
+  "name": "Panorama 360° · Ochsenhöfle",
+  "src": "https://ok-bergbahnen.panomax.com/ochsenhoefle",
+  "kind": "pano",
+  "link": "https://ok-bergbahnen.panomax.com/ochsenhoefle"
+ },
+ {
+  "id": "sol-schratt",
+  "zone": "sol",
+  "name": "Panorama 360° · Schrattenwang",
+  "src": "https://oberstdorf.panomax.com/schrattenwang",
+  "kind": "pano",
+  "link": "https://oberstdorf.panomax.com/schrattenwang"
+ },
+ {
+  "id": "heu-parsenn",
+  "zone": "heu",
+  "name": "Panorama 360° · Parsenn",
+  "src": "https://ok-bergbahnen.panomax.com/parsenn",
+  "kind": "pano",
+  "link": "https://ok-bergbahnen.panomax.com/parsenn"
+ },
+ {
+  "id": "heu-pump",
+  "zone": "heu",
+  "name": "Heuberg · estación superior",
+  "src": "https://webcams.tramino.net/das-hoechste/heuberg-pumpstation.jpg",
+  "kind": "img",
+  "link": "https://webcams.tramino.net/das-hoechste/heuberg-pumpstation.jpg"
+ },
+ {
+  "id": "heu-schoental",
+  "zone": "heu",
+  "name": "Heuberg · Schöntallift",
+  "src": "https://webcams.tramino.net/das-hoechste/heuberg-bergstation.jpg",
+  "kind": "img",
+  "link": "https://webcams.tramino.net/das-hoechste/heuberg-bergstation.jpg"
+ },
+ {
+  "id": "ifen-live",
+  "zone": "ifen",
+  "name": "Livecam Ifen",
+  "src": "https://webtv.feratel.com/webtv/?design=v5&cam=3048&c1=0",
+  "kind": "live",
+  "link": "https://webtv.feratel.com/webtv/?design=v5&cam=3048&c1=0"
+ },
+ {
+  "id": "ifen-pano",
+  "zone": "ifen",
+  "name": "Panorama 360° · Ifen",
+  "src": "https://ok-bergbahnen.panomax.com/ifen",
+  "kind": "pano",
+  "link": "https://ok-bergbahnen.panomax.com/ifen"
+ },
+ {
+  "id": "wal-live",
+  "zone": "wal",
+  "name": "Livecam Walmendingerhorn",
+  "src": "https://webtv.feratel.com/webtv/?design=v5&cam=3050&c1=0&c2=0&lg=de",
+  "kind": "live",
+  "link": "https://webtv.feratel.com/webtv/?design=v5&cam=3050&c1=0&c2=0&lg=de"
+ }
+]
