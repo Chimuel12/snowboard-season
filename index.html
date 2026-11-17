@@ -6,8 +6,8 @@
 <meta name="theme-color" content="#000000">
 <meta name="description" content="SnowSmarter: snowboard y ski en Oberstdorf y Kleinwalsertal: pistas en 3D, webcams cada 6 horas, pronóstico de nieve y calendario de aperturas.">
 <link rel="manifest" href="manifest.webmanifest">
-<link rel="icon" href="icon-192.png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="icon-192-v2.png">
+<link rel="apple-touch-icon" href="apple-touch-icon-v2.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -2234,7 +2234,7 @@ function startTour(){
   if(tour)return;
   const root=document.createElement("div");root.className="tour";
   root.innerHTML=`<div class="scrim"></div><div class="spot"></div><div class="tour-cursor"></div><div class="tour-card" role="dialog" aria-live="polite" aria-label="Tour de SnowSmarter">
-    <div class="tc-top"><img src="icon-192.png" alt="" width="22" height="22" style="border-radius:6px"><span class="tc-n"></span><button class="tc-x" aria-label="Cerrar tour">✕</button></div>
+    <div class="tc-top"><img src="icon-192-v2.png" alt="" width="22" height="22" style="border-radius:6px"><span class="tc-n"></span><button class="tc-x" aria-label="Cerrar tour">✕</button></div>
     <h3></h3><p></p><div class="tc-bar">${TOUR.map(()=>"<i><b></b></i>").join("")}</div>
     <div class="tc-nav"><button class="tc-prev">Atrás</button><button class="tc-next">Siguiente</button></div></div>`;
   document.body.appendChild(root);
